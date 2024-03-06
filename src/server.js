@@ -23,11 +23,9 @@ app.get('/register',(req,res)=>{
     res.sendFile(mainfolder+"/index.html")
 })
 app.post("/register",(req,res)=>{
-    // console.log(req.body);
     let req_userdata = new users_collection1(req.body);
     req_userdata.save();
     res.send('sucess')
-    // console.log(req_userdata)
 })
 app.listen(port,()=>{
     console.log(`listening port ${port}`)
